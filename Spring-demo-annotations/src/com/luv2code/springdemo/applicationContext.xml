@@ -20,9 +20,19 @@
     </bean>
 	
 	<!--############################################################################################################-->
-	    
-	
-	<context:component-scan base-package="com.luv2code.springdemo"/>
+	     <!-- 
+	Add a logger config to see logging messages.		
+	- For more detailed logs, set values to "FINEST"
+	- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
+ 	-->
+ 
+     <bean id="myLoggerConfig" class="com.luv2code.springdemo.MyLoggerConfig" init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+ 	
+ 		<context:component-scan base-package="com.luv2code.springdemo"/>
+ 	
 </beans>
 
 

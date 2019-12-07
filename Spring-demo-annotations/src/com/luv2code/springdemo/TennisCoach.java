@@ -1,5 +1,8 @@
 package com.luv2code.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -33,6 +36,19 @@ public class TennisCoach implements Coach {
 		System.out.println(">>Inside tennisCoach default constructor");
 	}
 	
+	
+	//define my init  method
+	@PostConstruct
+	public void doMyStartUpStaff()
+	{
+		System.out.println(">>TennisCoach:inside of doMyStartUpStaff");
+	}
+	
+	@PreDestroy
+	public void doMyCleanUpStaff()
+	{
+		System.out.println(">>TennisCoach:inside of doMyCleanUpStaff");
+	}
 /*	@Autowired
 	//define a setter method
 	public void doSomeCrazyStuff(FortuneService theFortuneService)

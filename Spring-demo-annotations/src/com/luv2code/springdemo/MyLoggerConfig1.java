@@ -12,8 +12,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-//@Configuration
-//@PropertySource("classpath:mylogger.properties")
+@Configuration
+@PropertySource("classpath:mylogger.properties")
 public class MyLoggerConfig1 {
 
 	@Value("${root.logger.level}")
